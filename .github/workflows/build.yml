@@ -5,6 +5,9 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: write
+  
 jobs:
   build:
     runs-on: windows-latest
@@ -19,3 +22,10 @@ jobs:
     - name: Build MSI
       run: |
         wix build stree.wxs -o stree-windows.msi
+        
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: stree-windows.msi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
