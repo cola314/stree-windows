@@ -34,7 +34,7 @@
     </Component>
 
     <UI>
-      <WixUI Id="WixUI_InstallScope" />
+      <WixUI Id="WixUI_Mondo" />
       <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999" />
     </UI>
 
