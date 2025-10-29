@@ -1,0 +1,29 @@
+name: Build MSI
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install WiX
+      run: |
+        dotnet tool install --global wix --version 5.0.1
+        wix extension add WixToolset.UI.wixext
+
+    - name: Build MSI
+      run: |
+        wix build stree.wxs -o stree-windows.msi
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: stree-windows.msi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
