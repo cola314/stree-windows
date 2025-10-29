@@ -33,10 +33,8 @@
                    System="yes" />
     </Component>
 
-    <UI>
-      <WixUI Id="WixUI_Mondo" />
-      <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999" />
-    </UI>
+    <UI />
+    <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999" />
 
   </Package>
 </Wix>
