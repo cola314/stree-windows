@@ -15,7 +15,6 @@ jobs:
     - name: Install WiX
       run: |
         dotnet tool install --global wix --version 5.0.1
-        wix extension add WixToolset.UI.wixext
 
     - name: Build MSI
       run: |
