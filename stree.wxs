@@ -33,5 +33,10 @@
                    System="yes" />
     </Component>
 
+    <UI>
+      <WixUI Id="WixUI_InstallScope" />
+      <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999" />
+    </UI>
+
   </Package>
 </Wix>
