@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Git Bash wrapper for stree.cmd
+# This script calls stree.cmd with the same parameters
+
+# Get the directory where this script is located
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Call stree.cmd with all passed arguments
+"$script_dir/stree.cmd" "$@"
